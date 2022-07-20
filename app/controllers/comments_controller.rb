@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
 
   def create
     if @comments = Comment.create(comment_params)
-      redirect_to prototypes_path(@comments.prototype.id)
+      redirect_to "/prototypes/#{@comments.prototype.id}"
     else
       render "prototypes/show"
     end
